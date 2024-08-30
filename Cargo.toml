@@ -9,7 +9,7 @@ edition = "2021"
 
 [dependencies]
 embedded-hal = { features = ["unproven"], version = "0.2.7" }
-display-interface = "0.5.0"
+display-interface = { git = "https://github.com/itswenb/ili9486-rs", branch = "main" }
 embedded-graphics = "0.8.1"
 
 [dev-dependencies]

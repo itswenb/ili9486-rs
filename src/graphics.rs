@@ -6,7 +6,7 @@ use embedded_graphics::pixelcolor::{
     Rgb565,
 };
 use embedded_graphics::prelude::*;
-use embedded_hal::digital::v2::OutputPin;
+use embedded_hal::digital::OutputPin;
 
 impl<CSX, RSX, IF> DrawTarget for ILI9486<CSX, RSX, IF>
 where

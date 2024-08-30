@@ -3,8 +3,8 @@
 use core::iter;
 
 use display_interface::{DataFormat, DisplayError, WriteOnlyDataCommand};
-use embedded_hal::delay::DelayNs;
-use embedded_hal::digital::OutputPin;
+use embedded_hal::blocking::delay::DelayMs;
+use embedded_hal::digital::v2::OutputPin;
 
 mod graphics;
 
@@ -69,7 +69,7 @@ where
         })
     }
 
-    pub fn init<D: DelayNs>(&mut self, delay: &mut D) -> Result<(), DisplayError> {
+    pub fn init<D: DelayMs<u32>>(&mut self, delay: &mut D) -> Result<(), DisplayError> {
         self.disable()?;
         // Reset as per the data sheet
         //self.deassert_reset()?;
